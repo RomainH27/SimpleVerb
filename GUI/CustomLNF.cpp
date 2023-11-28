@@ -31,7 +31,7 @@ void  CustomLNF::drawRotarySlider(juce::Graphics& g, int x, int y, int width, in
     int xCircle = x + bounds.getCentreX() - (radius)+lineW;
     int yCircle = x + bounds.getCentreY() - (radius)+lineW;
     int radiusCircle = (radius * 2) - (lineW * 2);
-    midCircle.addRoundedRectangle(juce::Rectangle(xCircle, yCircle, radiusCircle + 1, radiusCircle + 1), 35);
+    midCircle.addRoundedRectangle(juce::Rectangle<int>(xCircle, yCircle, radiusCircle + 1, radiusCircle + 1), 35);
     g.fillPath(midCircle);
 
 
