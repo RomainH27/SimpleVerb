@@ -7,11 +7,11 @@
     <GROUP id="{155443CC-6F9A-F5D0-E9F5-40D8F3BD833F}" name="GUI">
       <FILE id="VdB7Hq" name="CustomLNF.cpp" compile="1" resource="0" file="GUI/CustomLNF.cpp"/>
       <FILE id="OQZvSE" name="CustomLNF.h" compile="0" resource="0" file="GUI/CustomLNF.h"/>
-      <FILE id="tFlq2B" name="Futura Medium.otf" compile="0" resource="1"
-            file="GUI/Futura Medium.otf"/>
+      <FILE id="EakXky" name="MajorMonoDisplay-Regular.ttf" compile="0" resource="1"
+            file="GUI/MajorMonoDisplay-Regular.ttf"/>
     </GROUP>
     <GROUP id="{F9B4861A-62F0-AC2F-A261-5CCB14C4840A}" name="Image">
-      <FILE id="AAyhef" name="V3.png" compile="0" resource="1" file="../../../T&#233;l&#233;chargements/V3.png"/>
+      <FILE id="jT4Jkb" name="background.png" compile="0" resource="1" file="Image/background.png"/>
       <FILE id="zY71TA" name="Normal.png" compile="0" resource="1" file="Image/Normal.png"/>
       <FILE id="V980gZ" name="Freeze.png" compile="0" resource="1" file="Image/Freeze.png"/>
     </GROUP>

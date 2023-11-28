@@ -1,12 +1,3 @@
-/*
-  ==============================================================================
-
-    CustomLNF.cpp
-    Created: 13 Jun 2023 6:57:00pm
-    Author:  romai
-
-  ==============================================================================
-*/
 
 #include "CustomLNF.h"
 
@@ -26,13 +17,13 @@ void  CustomLNF::drawRotarySlider(juce::Graphics& g, int x, int y, int width, in
     auto arcRadius = radius - lineW * 0.5f;
 
 
-    g.setColour(juce::Colour::fromRGB(37, 36, 39));
-    juce::Path midCircle;
-    int xCircle = x + bounds.getCentreX() - (radius)+lineW;
-    int yCircle = x + bounds.getCentreY() - (radius)+lineW;
-    int radiusCircle = (radius * 2) - (lineW * 2);
-    midCircle.addRoundedRectangle(juce::Rectangle<int>(xCircle, yCircle, radiusCircle + 1, radiusCircle + 1), 35);
-    g.fillPath(midCircle);
+//    g.setColour(juce::Colour::fromRGB(37, 36, 39));
+//    juce::Path midCircle;
+//    int xCircle = x + bounds.getCentreX() - (radius)+lineW;
+//    int yCircle = x + bounds.getCentreY() - (radius)+lineW;
+//    int radiusCircle = (radius * 2) - (lineW * 2);
+//    midCircle.addRoundedRectangle(juce::Rectangle<int>(xCircle, yCircle, radiusCircle + 1, radiusCircle + 1), 35);
+//    g.fillPath(midCircle);
 
 
 
@@ -61,24 +52,27 @@ void  CustomLNF::drawRotarySlider(juce::Graphics& g, int x, int y, int width, in
             toAngle,
             true);
 
-        g.setColour(juce::Colours::aqua);
+        g.setColour(juce::Colour::fromRGB(0,116,254));
         g.strokePath(valueArc, juce::PathStrokeType(lineW, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
     }
 
     auto thumbWidth = lineW * 2.0f;
-    juce::Point<float> thumbPoint(bounds.getCentreX() + arcRadius * std::cos(toAngle - juce::MathConstants<float>::halfPi),
-        bounds.getCentreY() + arcRadius * std::sin(toAngle - juce::MathConstants<float>::halfPi));
+    juce::Point<float> thumbPoint(bounds.getCentreX() + (arcRadius+2) * std::cos(toAngle - juce::MathConstants<float>::halfPi),
+        bounds.getCentreY() + (arcRadius+2) * std::sin(toAngle - juce::MathConstants<float>::halfPi));
+
 
     g.setColour(juce::Colours::white);
 
-    g.drawLine(thumbPoint.getX(), thumbPoint.getY(), bounds.getCentreX() + (arcRadius / 2) * std::cos(toAngle - juce::MathConstants<float>::halfPi),
-        bounds.getCentreY() + (arcRadius / 2) * std::sin(toAngle - juce::MathConstants<float>::halfPi), 3.0f);
+    g.drawLine(thumbPoint.getX(), thumbPoint.getY(), bounds.getCentreX() + (arcRadius/1.2 ) * std::cos(toAngle - juce::MathConstants<float>::halfPi),
+        bounds.getCentreY() + (arcRadius/1.2 ) * std::sin(toAngle - juce::MathConstants<float>::halfPi), 3.0f);
 
     juce::Rectangle<float> textRect;
-    textRect.setBounds(10, height-25, width-20, 20);
+    textRect.setBounds(10, height-64, width-20, 20);
 
-    auto text = juce::String(slider.getValue());
-    g.setFont(15.f);
+    g.setColour(juce::Colours::white);
+    g.setFont(myCustomTypeface);
+    auto text = juce::String(std::round(slider.getValue()))+ juce::String("%") ;
+    g.setFont(12.f);
     g.drawText(text, textRect, juce::Justification::centred);
 
 }

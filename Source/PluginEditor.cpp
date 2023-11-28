@@ -21,7 +21,7 @@ SimpleVerbAudioProcessorEditor::SimpleVerbAudioProcessorEditor(SimpleVerbAudioPr
     freezeButtonAttachement(audioProcessor.apvts, "Freeze", freezeButton)
 {
 
-    setSize (650, 200);
+    setSize (669, 203);
 
     setLookAndFeel(&customLNF);
 
@@ -54,32 +54,35 @@ SimpleVerbAudioProcessorEditor::~SimpleVerbAudioProcessorEditor()
 //==============================================================================
 void SimpleVerbAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
+    g.drawImage( image,0,0,669,203,0,0,669,203);
 
-    g.fillAll(juce::Colour::fromRGB(30, 30, 30));
-
+    g.setFont(myCustomTypeface);
     g.setColour(juce::Colours::white);
     g.setFont(30.f);
-    g.drawText("SimpleVerb", juce::Rectangle<float>(220, 20, 200, 20), juce::Justification::centred);
+    g.drawText("simple", juce::Rectangle<float>(180, 20, 200, 20), juce::Justification::centred);
 
-    g.setFont(15.f);
-    g.drawText("Width", juce::Rectangle<float>(45, 60, 70, 20), juce::Justification::centred);
-    g.drawText("Damping", juce::Rectangle<float>(175, 60, 70, 20), juce::Justification::centred);
-    g.drawText("Size", juce::Rectangle<float>(405, 60, 70, 20), juce::Justification::centred);
-    g.drawText("DryWet", juce::Rectangle<float>(535, 60, 70, 20), juce::Justification::centred);
+    g.setColour(juce::Colour::fromRGB(0,111,251));
+    g.drawText("Verb", juce::Rectangle<float>(343, 20, 100, 20), juce::Justification::centred);
 
-   /* auto value = juce::String(audioProcessor.apvts.getRawParameterValue("Freeze")->load());
-    g.drawText(value, juce::Rectangle<float>(280, 150, 70, 20), juce::Justification::centred);*/
+    g.setColour(juce::Colours::white);
+    g.setFont(10.f);
+    g.drawText("Width", juce::Rectangle<float>(73, 160, 50, 20), juce::Justification::centred);
+    g.drawText("dAmpinG", juce::Rectangle<float>(185, 160, 60, 20), juce::Justification::centred);
+    g.drawText("fReeze", juce::Rectangle<float>(315, 160, 50, 20), juce::Justification::centred);
+    g.drawText("siZe", juce::Rectangle<float>(445, 160, 50, 20), juce::Justification::centred);
+    g.drawText("dry/Wet", juce::Rectangle<float>(560, 160, 60, 20), juce::Justification::centred);
+
+
 }
 
 void SimpleVerbAudioProcessorEditor::resized()
 {
-    freezeButton.setBounds(285, 100, 77.76, 30.72);
-
-    widthSlider.setBounds(30, 80, 100, 100);
-    dampSlider.setBounds(160, 80, 100, 100);
-    sizeSlider.setBounds(390, 80, 100, 100);
-    dryWetSlider.setBounds(520, 80, 100, 100);
+//    freezeButton.setBounds(285, 100, 77.76, 30.72);
+//
+    widthSlider.setBounds(51, 72, 94, 94);
+    dampSlider.setBounds(168, 72, 94, 94);
+    sizeSlider.setBounds(423, 72, 94, 94);
+    dryWetSlider.setBounds(540, 72, 94, 94);
 }
 
 

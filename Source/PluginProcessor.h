@@ -66,7 +66,7 @@ private:
 
     juce::dsp::Reverb reverbDSP;
 
-    juce::dsp::ProcessSpec spec;
+    juce::dsp::ProcessSpec spec{};
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleVerbAudioProcessor)
 };

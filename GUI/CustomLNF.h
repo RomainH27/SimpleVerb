@@ -1,12 +1,3 @@
-/*
-  ==============================================================================
-
-    CustomLNF.h
-    Created: 13 Jun 2023 6:57:00pm
-    Author:  romai
-
-  ==============================================================================
-*/
 
 #include <JuceHeader.h>
 #pragma once
@@ -27,6 +18,7 @@ public:
 
 private:
 
-    
+    juce::Font myCustomTypeface = juce::Typeface::createSystemTypefaceFor (BinaryData::MajorMonoDisplayRegular_ttf, BinaryData::MajorMonoDisplayRegular_ttfSize);
+
 
 };

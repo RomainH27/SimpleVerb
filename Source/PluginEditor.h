@@ -48,6 +48,8 @@ private:
     juce::AudioProcessorValueTreeState::ButtonAttachment freezeButtonAttachement;
 
     CustomLNF customLNF;
+    juce::Font myCustomTypeface = juce::Typeface::createSystemTypefaceFor (BinaryData::MajorMonoDisplayRegular_ttf, BinaryData::MajorMonoDisplayRegular_ttfSize);
+    juce::Image image = juce::ImageCache::getFromMemory(BinaryData::background_png, BinaryData::background_pngSize);
 
     juce::Image normalImage = juce::ImageCache::getFromMemory(BinaryData::Normal_png, BinaryData::Normal_pngSize);
     juce::Image clickedImage = juce::ImageCache::getFromMemory(BinaryData::Freeze_png, BinaryData::Freeze_pngSize);
