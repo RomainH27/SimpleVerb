@@ -77,8 +77,8 @@ void SimpleVerbAudioProcessorEditor::paint (juce::Graphics& g)
 
 void SimpleVerbAudioProcessorEditor::resized()
 {
-//    freezeButton.setBounds(285, 100, 77.76, 30.72);
-//
+    freezeButton.setBounds(308, 100, 65, 30);
+
     widthSlider.setBounds(51, 72, 94, 94);
     dampSlider.setBounds(168, 72, 94, 94);
     sizeSlider.setBounds(423, 72, 94, 94);
